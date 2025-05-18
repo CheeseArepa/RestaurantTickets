@@ -62,7 +62,7 @@ def listar_combos():
         print(f"{cid:<4}{nombre:<30}{precio:<12}{tiempo}")
     print()
 
-def leer_entero(prompt: str, minimo: int = None, maximo: int = None) -> int:
+def leer_entrada(prompt: str, minimo: int = None, maximo: int = None) -> int | str:
     while True:
         entrada = input(prompt).strip()
         if entrada.lower() == 'c':
@@ -86,7 +86,7 @@ def registrar_pedido():
 
     while True:
         listar_combos()
-        respuesta = leer_entero("Seleccione el ID del combo ('f' para finalizar, 'c' para cancelar): ", minimo=1, maximo=len(COMBOS))
+        respuesta = leer_entrada("Seleccione el ID del combo ('f' para finalizar, 'c' para cancelar): ", minimo=1, maximo=len(COMBOS))
         if respuesta == 'cancelar':
             print("Pedido cancelado. Regresando al menú principal.")
             return
@@ -96,7 +96,7 @@ def registrar_pedido():
                 continue
             break
         cid = respuesta
-        cantidad = leer_entero("Cantidad de unidades: ", minimo=1)
+        cantidad = leer_entrada("Cantidad de unidades: ", minimo=1)
         if cantidad == 'cancelar':
             print("Pedido cancelado. Regresando al menú principal.")
             return
@@ -195,7 +195,7 @@ def mostrar_menu() -> int:
     print("4. Reiniciar datos")
     print("5. Salir")
     print("=" * 28)
-    return leer_entero("\nSeleccione una opción (1-5): ", minimo=1, maximo=5)
+    return leer_entrada("\nSeleccione una opción (1-5): ", minimo=1, maximo=5)
 
 def main():
     print("\n¡Bienvenido a la app!")
