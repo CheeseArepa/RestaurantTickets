@@ -13,4 +13,4 @@ Desde la terminal, ingrese a la carpeta del proyecto y ejecute:
 
 Clone este repositorio y asegúrese de tener un IDE y JDK compatibles con Java
 
-Desde su IDE ejecute el Main.java
+Desde su IDE ejecute el `Main.java`
